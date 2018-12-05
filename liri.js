@@ -18,6 +18,10 @@ if (process.argv[4]) {
 };
 
 if (command === 'concert-this') { concert(input); };
+if (command === 'spotify-this-song') { song(input); };
+if (command === 'movie-this') { movie(input); };
+if (command === 'do-what-it-says') { textRead(); };
+
 
 function concert(concert) {
     axios.get(
@@ -35,8 +39,6 @@ function concert(concert) {
     });
 };
 
-
-if (command === 'spotify-this-song') { song(input); };
 
 function song(song) {
     if (song === undefined) { song = 'The Sign Ace of Base' }
@@ -57,8 +59,6 @@ function song(song) {
 };
 
 
-if (command === 'movie-this') { movie(input); };
-
 function movie(movie) {
     if (movie === undefined) { movie = 'Mr. Nobody' };
     axios.get(
@@ -78,7 +78,7 @@ function movie(movie) {
 };
 
 
-if (command === 'do-what-it-says') {
+function textRead() {
     fs.readFile("random.txt", "utf8", function (err, data) {
         if (err) {
             return console.log(err);
