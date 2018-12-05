@@ -85,7 +85,16 @@ function textRead() {
         }
         data = data.split(',');
 
-        if (data[0] === 'spotify-this-song');
-        song(data[1]);
+        if (data[0] === 'concert-this'); {
+            concert(data[1]);
+        };
+
+        if (data[0] === 'spotify-this-song'); {
+            song(data[1]);
+        };
+
+        if (data[0] === 'movie-this'); {
+            movie(data[1]);
+        };
     });
 };
