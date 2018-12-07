@@ -10,9 +10,6 @@ let command = process.argv[2];
 let input = process.argv[3];
 
 
-console.log('initial input: ' + input);
-console.log('initial command: ' + command);
-
 if (process.argv[4]) {
     input = process.argv.slice(3).join("+");
 };
@@ -23,17 +20,17 @@ if (command === 'movie-this') { movie(input); };
 if (command === 'do-what-it-says') { textRead(); };
 
 
-function concert(concert) {
+function concert(artist) {
     axios.get(
-        `https://rest.bandsintown.com/artists/${concert}/events?app_id=codingbootcamp`
+        `https://rest.bandsintown.com/artists/${artist}/events?app_id=codingbootcamp`
     ).then(function (response) {
         let reply = response.data;
-        console.log(`${concert}... performing ${reply.length} events soon!`);
+        console.log(`${artist}... performing ${reply.length} events soon!`);
         for (let i = 0; i < reply.length; i++) {
             console.log(` `);
             console.log(`Venue Name: ${reply[i].venue.name}`);
             console.log(`Location: ${reply[i].venue.city}, ${reply[i].venue.country}`);
-            console.log(`Date and Time: ${moment(reply[i].datetime).format("MMM Do YYYY")}`);
+            console.log(`Date: ${moment(reply[i].datetime).format("MMM Do YYYY")}`);
             console.log('------------------------------------------');
         };
     });
