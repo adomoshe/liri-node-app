@@ -33,14 +33,20 @@ Liri recognizes **4** `command` inputs:
 
 ![concert-this screenshot](/screenshots/concert-this.png)
 
-**spotify-this-song** `command` calls a function that uses the node-spotify-api npm package to display the artist, album, and Spotify link for the selected `input`.
+**spotify-this-song** `command` calls a function that uses the node-spotify-api npm package to display the artist, album, and Spotify link for the selected `input`. If no `input` is entered a default song "The Sign" by Ace of Base is used.
 
 ![spotify-this-song screenshot](/screenshots/spotify-this-song.png)
 
-**movie-this** `command` calls a function that uses axios to hit the OMDB API and displays the release year, production countries, actors, languages, IMDB and Rotten Tomatoes ratings, and short plot of the `input`.
+**movie-this** `command` calls a function that uses axios to hit the OMDB API and displays the release year, production countries, actors, languages, IMDB and Rotten Tomatoes ratings, and short plot of the `input`. If no `input` is entered a default movie "Mr. Nobody" is used.
 
 ![movie-this screenshot](/screenshots/movie-this.png)
 
 **do-what-it-says** `command` that uses fs built in package to read the random.txt file splitting the parsed string on `','` and calls the correct liri function depending using the following value written.
 
 ![do-what-it-says screenshot](/screenshots/do-what-it-says.png)
+
+### Bonus:
+
+A log.txt file is made as a receipt for all the searches a user makes.
+
+![log screenshot](/screenshots/log.png)
