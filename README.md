@@ -1,6 +1,24 @@
 # liri-node-app
 ### LIRI bot is a language interpretation and recognition interface, a command line node app that takes parameters and gives back data.
 
+
+### Resources:
+##### Written in JavaScript on Node.js using the following npm packages: 
+* axios 
+* node-spotify-api 
+* moment 
+* dotenv
+
+Internal node package: 
+* fs 
+
+APIs:
+* Bands in Town
+* Spotify
+* OMDB
+
+
+### Functionality:
 Liri recognizes **4** `command` inputs:
 * **concert-this**
 * **spotify-this-song**
