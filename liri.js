@@ -33,6 +33,7 @@ function concert(artist) {
             console.log(`Date: ${moment(reply[i].datetime).format("MMM Do YYYY")}`);
             console.log('------------------------------------------');
         };
+        logThis(command, artist);
     });
 };
 
@@ -53,6 +54,7 @@ function song(song) {
         .catch(function (err) {
             console.log(err);
         });
+    logThis(command, song);
 };
 
 
@@ -72,6 +74,7 @@ function movie(movie) {
         console.log(`Plot: ${reply.Plot}`);
         console.log('');
     });
+    logThis(command, movie);
 };
 
 
@@ -94,4 +97,20 @@ function textRead() {
             movie(data[1]);
         };
     });
+};
+
+function logThis(logCommand, logInput) {
+    if (command === 'do-what-it-says') {
+        logInput = `random.txt input: ${logInput}`;
+    };
+    logInput = logInput.split('+').join(' ');
+    console.log('after' + logInput)
+    fs.appendFile(
+        "log.txt",
+        `At "${moment().format('MM/DD/YY HH:mm')}" you entered the command "${logCommand}" with the input "${logInput}" on liri.\n`,
+        function (err) {
+            if (err) {
+                return console.log(err);
+            };
+        });
 };
